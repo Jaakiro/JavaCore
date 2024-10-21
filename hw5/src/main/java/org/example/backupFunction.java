@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 
-public class backupFunction {
+public class BackupFunction {
     public static void createBackup() throws IOException {
         Path backupDir = Path.of("./backup");
 
@@ -20,6 +20,7 @@ public class backupFunction {
 
                 Path backupFilePath = backupDir.resolve(file.getFileName());
                 Files.copy(file, backupFilePath, StandardCopyOption.REPLACE_EXISTING);
+                System.out.println("Файл скопирован: " + file.getFileName());
             }
         }
     }
